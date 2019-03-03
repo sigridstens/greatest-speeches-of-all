@@ -24,22 +24,17 @@ var churchillSpeech = {
 
 function ageComparison() {
     for (var k = 0; k < speechesArray.length; k += 1) {
-        if (speechesArray[k].year > oldestSpeech) {
+        if (speechesArray[k].year < oldestSpeech) {
             oldestSpeech = speechesArray[k].year;
         }
 
-        if (speechesArray[k].year < newestSpeech) {
+        if (speechesArray[k].year > newestSpeech) {
             newestSpeech = speechesArray[k].year;
-        }
-
-        if (speechesArray[k] === newestSpeech) {
-            console.log("This is the most recent speech on the page")
-        } else if (speechesArray[k] === oldestSpeech) {
-            console.log("This is the oldest speech on the page")
         }
     }
 }
 
+ageComparison();
 
 while (i < speechesArray.length) {
     console.log("This speech is written by " + speechesArray[i].author + ".");
@@ -57,27 +52,37 @@ document.getElementById('BtnDonate').addEventListener('click', function() {
     }
 });
 
-//Churchill Button
 document.getElementById('BtnChurchill').addEventListener('click', function(){
-  console.log('This speech was written by ' + speechesArray[0].author + ' in ' + speechesArray[0].year);
+    //Code in here executes when the user clicks the "Churchill" button.
+    console.log('This speech was written by ' + speechesArray[0].author + ' in ' + speechesArray[0].year);
 
-  ageComparison ();
-
+    if (speechesArray[0].year === newestSpeech) {
+        console.log("This is the most recent speech on the page")
+    } else if (speechesArray[0].year === oldestSpeech) {
+        console.log("This is the oldest speech on the page")
+    }
 });
+
 
 document.getElementById('BtnGhandi').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Ghandi" button.
   console.log('This speech was written by ' + speechesArray[1].author + ' in ' + speechesArray[1].year);
 
-    ageComparison ();
-
+    if (speechesArray[1].year === newestSpeech) {
+        console.log("This is the most recent speech on the page")
+    } else if (speechesArray[1].year === oldestSpeech) {
+        console.log("This is the oldest speech on the page")
+    }
 });
 
 document.getElementById('BtnDemosthenes').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Demosthenes" button.
   console.log('This speech was written by ' + speechesArray[2].author + ' in ' + speechesArray[2].year);
 
-    ageComparison ();
-
+    if (speechesArray[2].year === newestSpeech) {
+        console.log("This is the most recent speech on the page")
+    } else if (speechesArray[2].year === oldestSpeech) {
+        console.log("This is the oldest speech on the page")
+    }
 });
 
