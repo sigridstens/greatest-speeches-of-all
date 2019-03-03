@@ -19,7 +19,14 @@ var churchillSpeech = {
     },
     speechesArray = [churchillSpeech, ghandiSpeech, demosthenesSpeech],
     userNamePrompt,
-    favoriteSpeechPrompt;
+    favoriteSpeechPrompt,
+    i = 0;
+
+while (i < speechesArray.length) {
+    console.log("This speech is written by " + speechesArray[i].author + ".");
+    i += 1;
+}
+
 
 document.getElementById('BtnDonate').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Donate" button.
